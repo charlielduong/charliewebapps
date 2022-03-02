@@ -45,8 +45,8 @@ public class twoButtons extends HttpServlet
 static String Servlet = "twoButtons";
 
 // Button labels
-static String OperationAdd = "Add";
-static String OperationSub = "Subtract";
+static String AtoB = "stringAstringB";
+static String BtoA = "stringBstringA";
 
 // Other strings.
 static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
@@ -71,13 +71,13 @@ public void doPost (HttpServletRequest request, HttpServletResponse response)
    if ((rhsStr != null) && (rhsStr.length() > 0))
       rhsVal = new Float(rhsStr);
 
-   if (operation.equals(OperationAdd))
+   if (operation.equals(AtoB))
    {
-      rslt = new Float(lhsVal.floatValue() + rhsVal.floatValue());
+      rslt = lhsVal + rhsVal;
    }
-   else if (operation.equals(OperationSub))
+   else if (operation.equals(BtoA))
    {
-      rslt = new Float(lhsVal.floatValue() - rhsVal.floatValue());
+      rslt = lhsVal + rhsVal;
    }
 
    response.setContentType("text/html");
@@ -147,8 +147,8 @@ private void PrintBody (PrintWriter out, String lhs, String rhs, String rslt)
    out.println(" </table>");
    out.println(" <br>");
    out.println(" <br>");
-   out.println(" <input type=\"submit\" value=\"" + OperationAdd + "\" name=\"Operation\">");
-   out.println(" <input type=\"submit\" value=\"" + OperationSub + "\" name=\"Operation\">");
+   out.println(" <input type=\"submit\" value=\"" + AtoB + "\" name=\"Operation\">");
+   out.println(" <input type=\"submit\" value=\"" + BtoA + "\" name=\"Operation\">");
    out.println(" <input type=\"reset\" value=\"Reset\" name=\"reset\">");
    out.println("</form>");
    out.println("");
