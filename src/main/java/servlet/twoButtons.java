@@ -133,11 +133,11 @@ private void PrintBody (PrintWriter out, String lhs, String rhs, String rslt)
    out.println("");
    out.println(" <table>");
    out.println("  <tr>");
-   out.println("   <td>First value:");
+   out.println("   <td>First String:");
    out.println("   <td><input type=\"text\" name=\"LHS\" value=\"" + lhs + "\" size=5>");
    out.println("  </tr>");
    out.println("  <tr>");
-   out.println("   <td>Second value:");
+   out.println("   <td>Second String:");
    out.println("   <td><input type=\"text\" name=\"RHS\" value=\"" + rhs + "\" size=5>");
    out.println("  </tr>");
    out.println("  <tr>");
