@@ -47,7 +47,7 @@ public class Assignment4 extends HttpServlet // Inheriting from HttpServlet make
         out.println("<link rel='stylesheet' type='text/css' href='/styles/assignment3.css'/>");
         out.println("<link rel='stylesheet' type='text/css' href='/styles/default.css'/>");
 
-        out.println("<script src='js/assignment4.js'></script>");
+        out.println("<script src='js/Assignment4.js'></script>");
 
         out.println("</head>");
     }
