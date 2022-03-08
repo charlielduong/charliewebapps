@@ -36,7 +36,7 @@ function generateButton() {
         document.getElementById("Value").colSpan = 2;
 
         child.type = "number";
-        child.name = "Input #" + i;   // used in form checker script
+        child.name = "blocks";   // used in form checker script
         child.classList.add("userInput");
         // preset values
         child.min = 1;
