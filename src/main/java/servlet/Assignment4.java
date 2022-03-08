@@ -96,7 +96,7 @@ public class Assignment4 extends HttpServlet // Inheriting from HttpServlet make
         out.println("  </div>");
 
         out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto;'>");
-        out.println("    <form method='post' action='assignment4'>");
+        out.println("    <form method='post' action='Assignment4'>");
         out.println("      <table id='form' style='text-align: right; margin: auto; margin-top: 5%; width: 100% !important;'>");
         out.println("        <tr>");
         out.println("          <td>Enter a positive number of characteristics: </td>");
