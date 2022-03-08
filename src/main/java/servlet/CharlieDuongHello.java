@@ -17,7 +17,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    out.println("<html>");
    out.println("<head>");
    out.println("<title>Servlet example</title>");
-   out.println("</head>");
+   out.println("</head>"); 
    out.println("<body>");
    out.println("<h1>Charlie's first servlet!</h1>");
    out.println("<p>Hi christine and jimmy :)))</p>");
