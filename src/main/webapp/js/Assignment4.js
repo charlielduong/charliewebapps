@@ -12,7 +12,7 @@ function generateButton() {
         return false;
     }
 
-    // checks for integer type
+    // checks for integer typea
     if (!document.getElementById("totalInputs").checkValidity()) {
         alert("Please enter an integer. i.e. 1 or 2");
         document.getElementById("totalInputs").value = "";
