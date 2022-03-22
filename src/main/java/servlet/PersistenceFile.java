@@ -21,7 +21,7 @@ import javax.servlet.annotation.WebServlet;
 
 @WebServlet(name = "FilePersistence", urlPatterns = {"/file"})
 public class PersistenceFile extends HttpServlet{
-  static enum Data {AGE, NAME};
+  static enum Data {AGE, NAME, JOB};
   static String RESOURCE_FILE = "entries.txt";
   static final String VALUE_SEPARATOR = ";";
 
@@ -46,6 +46,7 @@ public class PersistenceFile extends HttpServlet{
   {
      String name = request.getParameter(Data.NAME.name());
      String age = request.getParameter(Data.AGE.name());
+     String job = request.getParameter(Data.JOB.name());
 
      String error = "";
      if(name == null){
@@ -74,6 +75,11 @@ public class PersistenceFile extends HttpServlet{
           }
      }
 
+     if(job == null){
+      error= "<li>Job is required</li>";
+      job = "";
+    }
+
      response.setContentType("text/html");
      PrintWriter out = response.getWriter();
 
@@ -87,7 +93,7 @@ public class PersistenceFile extends HttpServlet{
        PrintTail(out);
      }else{
        PrintHead(out);
-       PrintBody(out, name, age, error);
+       PrintBody(out, name, age, job, error);
        PrintTail(out);
      }
   }
@@ -127,7 +133,7 @@ public class PersistenceFile extends HttpServlet{
   /** *****************************************************
    *  Prints the <BODY> of the HTML page
   ********************************************************* */
-  private void PrintBody (PrintWriter out, String name, String age, String error){
+  private void PrintBody (PrintWriter out, String name, String age, String job, String error){
      out.println("<body onLoad=\"setFocus()\">");
      out.println("<p>");
      out.println("A simple example that demonstrates how to persist data to a file");
@@ -155,6 +161,11 @@ public class PersistenceFile extends HttpServlet{
       +"\" oninput=\"this.value=this.value.replace(/[^0-9]/g,'');\" value=\""
       +age+"\" size=3 required></td>");
      out.println("  </tr>");
+     out.println("  <tr>");
+     out.println("   <td>Job:</td>");
+     out.println("   <td><input type=\"text\" name=\""+Data.JOB.name()
+      +"\" value=\""+job+"\" size=30 required></td>");
+     out.println("  </tr>");
      out.println(" </table>");
      out.println(" <br>");
      out.println(" <br>");
@@ -181,6 +192,7 @@ public class PersistenceFile extends HttpServlet{
         out.println("  <tr>");
         out.println("   <th>Name</th>");
         out.println("   <th>Age</th>");
+        out.println("   <th>Job</th>");
         out.println("  </tr>");
         File file = new File(resourcePath);
         if(!file.exists()){
