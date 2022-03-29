@@ -27,6 +27,8 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    if (remove != null && remove.equals("on"))
    {
       session.removeAttribute("att_name");
+      session.removeAttribute("att_value");
+      session.removeAttribute("att_value2");
    }
    else
    {
