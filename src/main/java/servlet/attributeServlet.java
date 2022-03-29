@@ -34,7 +34,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
       {
          session.setAttribute(name, value);
       }
-      if(value != null && value.length() > 0){
+      if(value2 != null && value2.length() > 0){
         session.setAttribute(name,value2);
       }
 
