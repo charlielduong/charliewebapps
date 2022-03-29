@@ -73,7 +73,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    out.println("Attributes in this session:");
    Enumeration e = session.getAttributeNames();
-   while (e.hasMoreElements())
+   if (e.hasMoreElements())
    {
       String att_name  = (String) e.nextElement();
       String att_value = (String) session.getAttribute(att_name);
