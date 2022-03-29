@@ -30,9 +30,10 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    }
    else
    {
-      if ((name != null && name.length() > 0) && (value != null && value.length() > 0))
+      if ((name != null && name.length() > 0) && (value != null && value.length() > 0) && (value2 != null && value2.length() > 0))
       {
          session.setAttribute(name, value);
+         session.setAttribute(name, value2);
       }
 
    }
