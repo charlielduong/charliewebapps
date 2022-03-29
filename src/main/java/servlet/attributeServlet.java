@@ -30,7 +30,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    }
    else
    {
-      if ((name != null && name.length() > 0){
+      if (name != null && name.length() > 0){
           session.setAttribute("att_name",name);
       }
       if(value != null && value.length() > 0){
