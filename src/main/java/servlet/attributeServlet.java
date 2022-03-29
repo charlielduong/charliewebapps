@@ -18,6 +18,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    String name   = request.getParameter("attrib_name");
    String value  = request.getParameter("attrib_value");
+   String value2 = request.getParameter("attrib_value2");
    String remove = request.getParameter("attrib_remove");
 
    if (remove != null && remove.equals("on"))
@@ -58,6 +59,9 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    out.println(" Value: ");
    out.println(" <input type=\"text\" size=\"10\" name=\"attrib_value\">");
 
+   out.println(" Second Value: ");
+   out.println(" <input type=\"text\" size=\"10\" name=\"attrib_value2\">");
+
    out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
    out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
    out.println("</form>");
@@ -69,11 +73,14 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    {
       String att_name  = (String) e.nextElement();
       String att_value = (String) session.getAttribute(att_name);
+      String att_value2 = (String) session.getAttribute(att_name);
 
       out.print  ("<br><b>Name:</b> ");
       out.println(att_name);
       out.print  ("<br><b>Value:</b> ");
       out.println(att_value);
+      out.print  ("<br><b>Second Value:</b> ");
+      out.println(att_value2);
    } //end while
 
    out.println("</body>");
