@@ -21,7 +21,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    String name   = request.getParameter("attrib_name");
    String value  = request.getParameter("attrib_value");
-   String value2 = request.getParameter("attrib_value2");
+   String value2  = request.getParameter("attrib_value2");
    String remove = request.getParameter("attrib_remove");
 
    if (remove != null && remove.equals("on"))
@@ -30,10 +30,12 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    }
    else
    {
-      if ((name != null && name.length() > 0) && (value != null && value.length() > 0) && (value2 != null && value2.length() > 0))
+      if ((name != null && name.length() > 0) && (value != null && value.length() > 0))
       {
          session.setAttribute(name, value);
-         session.setAttribute(name, value2);
+      }
+      if(value != null && value.length() > 0){
+        session.setAttribute(name,value2);
       }
 
    }
