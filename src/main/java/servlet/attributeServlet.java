@@ -26,18 +26,19 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
    if (remove != null && remove.equals("on"))
    {
-      session.removeAttribute(name);
+      session.removeAttribute("att_name");
    }
    else
    {
-      if ((name != null && name.length() > 0) && (value != null && value.length() > 0))
-      {
-         session.setAttribute(name, value);
+      if ((name != null && name.length() > 0){
+          session.setAttribute("att_name",name);
+      }
+      if(value != null && value.length() > 0){
+        session.setAttribute("att_value",value);
       }
       if(value2 != null && value2.length() > 0){
-        session.setAttribute(name,value2);
+        session.setAttribute("att_value2",value2);
       }
-
    }
 
    response.setContentType("text/html");
@@ -77,9 +78,9 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    Enumeration e = session.getAttributeNames();
    if (e.hasMoreElements())
    {
-      String att_name  = (String) e.nextElement();
-      String att_value = (String) session.getAttribute(att_name);
-      String att_value2 = (String) session.getAttribute(att_name);
+      String att_name  = (String) session.getAttribute("att_name");
+      String att_value = (String) session.getAttribute("att_value");
+      String att_value2 = (String) session.getAttribute("att_value2");
 
       out.print  ("<br><b>Name:</b> ");
       out.println(att_name);
