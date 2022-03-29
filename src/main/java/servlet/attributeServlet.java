@@ -1,5 +1,5 @@
-// From "Professional Java Server Programming", Patzer et al.,
 
+package servlet;
 // Import Servlet Libraries
 import javax.servlet.*;
 import javax.servlet.http.*;
