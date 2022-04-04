@@ -31,7 +31,7 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
 
         out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto; padding: 1em;'>");
 
-        System.out.println(values.length + " " + characteristic.length);
+        out.println("<p> " + values.length + " " + characteristic.length +"</p>");
 
         for(String s : values) {
             String line = "";
