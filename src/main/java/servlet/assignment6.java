@@ -172,4 +172,40 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
             curr++;
         }
     }
+
+    private void printEC(HttpServletRequest request, PrintWriter out){
+        String[] characteristic = request.getParameterValues("characteristicName");
+        String[] values = request.getParameterValues("blocks");
+
+        
+
+        //Find maximum # of blocks among the characteristics
+        int maxCharacteristics = 0;
+        for(int i=0; i<characteristic.length; i++){
+            if(i > maxCharacteristics){ maxCharacteristics = i; }
+        }
+
+        //Find
+        out.println("<p> " + maxCharacteristics + " Each-Choice Abstract Tests: ");
+
+        // Printing each ECC
+        for(int i=0; i<maxCharacteristics; i++){ 
+            String line = "<p>[ ";
+            for(int j=0; j<characteristic.length; j++){
+                line += characteristic[i] + "-" + (j+1);
+                // if (i < value-1) {
+                //     line += ",";
+                // }
+                line += " ";
+            }
+            out.println(line);
+        }
+
+        out.println("</p>");
+        
+    }
+
+    private void printBC(){
+
+    }
 }
