@@ -31,24 +31,24 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
 
         out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto; padding: 1em;'>");
 
-        out.println("<p> " + values.length + " " + characteristic.length +"</p>");
+        //out.println("<p> " + values.length + " " + characteristic.length +"</p>");
+        printCharacteristics(request, out);
+        // for(String s : values) {
+        //     String line = "";
+        //     line += "<p>[ ";
 
-        for(String s : values) {
-            String line = "";
-            line += "<p>[ ";
+        //     int value = Integer.parseInt(s);
+        //     for(int i = 1; i <= value; i++) {
+        //         line += characteristic[i-1] + "-" + i;
+        //         if (i < value) {
+        //             line += ",";
+        //         }
+        //         line += " ";
+        //     }
 
-            int value = Integer.parseInt(s);
-            for(int i = 1; i <= value; i++) {
-                line += characteristic[i-1] + "-" + i;
-                if (i < value) {
-                    line += ",";
-                }
-                line += " ";
-            }
-
-            line += "]</p>";
-            out.println(line);
-        }
+        //     line += "]</p>";
+        //     out.println(line);
+        // }
 
         out.println("  </div>");
         out.println("</div>");
@@ -147,5 +147,29 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
     private void printTail(PrintWriter out) {
         out.println("");
         out.println("</html>");
+    }
+
+    private void printCharacteristics(HttpServletRequest request, PrintWriter out) {
+        String[] characteristic = request.getParameterValues("characteristicName");
+        String[] values = request.getParameterValues("blocks");
+        
+        int curr = 0;
+        for(String s : values) {
+            String line = "";
+            line += "<p>[ ";
+            int value = Integer.parseInt(s);
+            for(int i = 0; i < value; i++) {
+                line += characteristic[curr] + "-" + (i+1);
+                if (i < value-1) {
+                    line += ",";
+                }
+                line += " ";
+            }
+
+            line += "]</p>";
+            
+            out.println(line);
+            curr++;
+        }
     }
 }
