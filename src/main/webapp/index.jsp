@@ -24,6 +24,7 @@
     <button onclick="window.location.assign(servletURL+'/Assignment4');">Assignment 4</button>
     <button onclick="window.location.assign(servletURL+'/sessionLifeCycle');">Session Life Cycle</button>
     <button onclick="window.location.assign(servletURL+'/attributeServlet');">Attribute Servlet</button>
+    <button onclick="window.location.assign(servletURL+'/assignment6');">Assignment 6</button>
   </div>
 </body>
 </html>
