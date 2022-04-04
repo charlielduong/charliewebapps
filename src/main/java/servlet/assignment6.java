@@ -33,6 +33,7 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
 
         //out.println("<p> " + values.length + " " + characteristic.length +"</p>");
         printCharacteristics(request, out);
+        printEC(request, out);
         // for(String s : values) {
         //     String line = "";
         //     line += "<p>[ ";
