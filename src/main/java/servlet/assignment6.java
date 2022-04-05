@@ -193,7 +193,7 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
         // Printing each ECC
         for(int i=0; i<maxCharacteristics; i++){ 
             String line = "<p>[ ";
-            for(int j=0; j<characteristic.length; j++){
+            for(int j=0; j<values.length; j++){
                 line += characteristic[i];
                 if(Integer.parseInt(values[j]) > 0){
                     line += "-" + (j+1);
