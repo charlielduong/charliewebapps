@@ -194,7 +194,7 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
         for(int i=0; i<maxCharacteristics; i++){ 
             String line = "<p>[ ";
             for(int j=0; j<values.length; j++){
-                line += characteristic[i];
+                line += characteristic[j];
                 if(Integer.parseInt(values[j]) > 0){
                     line += "-" + (i+1);
                     values[j] = (Integer.parseInt(values[j])-1) + "";
