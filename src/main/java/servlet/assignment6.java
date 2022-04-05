@@ -195,12 +195,16 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
             String line = "<p>[ ";
             for(int j=0; j<characteristic.length; j++){
                 line += characteristic[i] + "-" + (j+1);
-                // if (i < value-1) {
-                //     line += ",";
-                // }
+                if(Integer.parseInt(values[j]) > 0){
+                    line += "-" + (j+1);
+                    values[j] = (Integer.parseInt(values[j])-1) + "";
+                }else{
+                    line += "-*";
+                }
                 line += " ";
             }
-            out.println(line);
+            
+            out.println(line + "]");
         }
 
         out.println("</p>");
