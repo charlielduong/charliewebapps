@@ -196,7 +196,7 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
             for(int j=0; j<values.length; j++){
                 line += characteristic[i];
                 if(Integer.parseInt(values[j]) > 0){
-                    line += "-" + (j+1);
+                    line += "-" + (i+1);
                     values[j] = (Integer.parseInt(values[j])-1) + "";
                 }else{
                     line += "-*";
