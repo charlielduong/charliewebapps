@@ -183,10 +183,11 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
         //Find maximum # of blocks among the characteristics
         int maxCharacteristics = 0;
         for(int i=0; i<characteristic.length; i++){
-            if(Integer.parseInt(characteristic[i]) > maxCharacteristics){ maxCharacteristics = i; }
+            //DOESNT WORK BRO
+            if(Integer.parseInt(values[i]) > maxCharacteristics){ maxCharacteristics = i; }
         }
 
-        //Find
+        
         out.println("<p> " + maxCharacteristics + " Each-Choice Abstract Tests: ");
 
         // Printing each ECC
