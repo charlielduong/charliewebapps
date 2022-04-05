@@ -208,10 +208,5 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
         }
 
         out.println("</p>");
-        
-    }
-
-    private void printBC(){
-
     }
 }
