@@ -178,16 +178,12 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
         String[] characteristic = request.getParameterValues("characteristicName");
         String[] values = request.getParameterValues("blocks");
 
-        
-
         //Find maximum # of blocks among the characteristics
         int maxCharacteristics = 0;
         for(int i=0; i<values.length; i++){
-            //DOESNT WORK BRO
             if(Integer.parseInt(values[i]) > maxCharacteristics){ maxCharacteristics = Integer.parseInt(values[i]); }
         }
 
-        
         out.println("<p> " + maxCharacteristics + " Each-Choice Abstract Tests: ");
 
         // Printing each ECC
@@ -206,7 +202,6 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
             
             out.println(line + "]");
         }
-
         out.println("</p>");
     }
 }
