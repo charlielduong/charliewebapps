@@ -28,15 +28,16 @@ public class Assignment4 extends HttpServlet // Inheriting from HttpServlet make
         out.println("    <h3>Characteristics and their blocks</h3>");
         out.println("  </div>");
 
-        out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto; padding: 1em;'>");
+        out.println(
+                "  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto; padding: 1em;'>");
 
         int name = 1;
-        for(String block : characteristics) {
+        for (String block : characteristics) {
             String line = "";
             line += "<p> Characteristic " + name + ": [ ";
             int numBlocks = Integer.parseInt(block);
 
-            for(int i = 1; i <= numBlocks; i++) {
+            for (int i = 1; i <= numBlocks; i++) {
                 line += name + "-" + i;
                 if (i < numBlocks) {
                     line += ",";
@@ -97,14 +98,17 @@ public class Assignment4 extends HttpServlet // Inheriting from HttpServlet make
 
         out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto;'>");
         out.println("    <form method='post' action='Assignment4'>");
-        out.println("      <table id='form' style='text-align: right; margin: auto; margin-top: 5%; width: 100% !important;'>");
+        out.println(
+                "      <table id='form' style='text-align: right; margin: auto; margin-top: 5%; width: 100% !important;'>");
         out.println("        <tr>");
         out.println("          <td>Enter a positive number of characteristics: </td>");
         out.println("          <td>");
-        out.println("            <input style='width: 100%;' type='number' min='1' id='totalInputs' placeholder='1' autofocus required>");
+        out.println(
+                "            <input style='width: 100%;' type='number' min='1' id='totalInputs' placeholder='1' autofocus required>");
         out.println("          </td>");
         out.println("          <td>");
-        out.println("            <input style='width: 100%;' id='gen' type='button' class='primary' value='Generate' style='width: 100%;' onclick='generateButton()'>");
+        out.println(
+                "            <input style='width: 100%;' id='gen' type='button' class='primary' value='Generate' style='width: 100%;' onclick='generateButton()'>");
         out.println("          </td>");
         out.println("        </tr>");
 
@@ -114,8 +118,10 @@ public class Assignment4 extends HttpServlet // Inheriting from HttpServlet make
         out.println("          <td></td>");
         out.println("          <td></td>");
         out.println("          <td style='text-align: right;'>");
-        out.println("            <input type='reset' class='secondary' value='Reset' style='width: fit-content; width: 100%;' onclick='resetButton();'>");
-        out.println("            <input type='submit' class='primary' value='Submit' style='width: fit-content; width: 100%;' onclick='checkInputs();'>");
+        out.println(
+                "            <input type='reset' class='secondary' value='Reset' style='width: fit-content; width: 100%;' onclick='resetButton();'>");
+        out.println(
+                "            <input type='submit' class='primary' value='Submit' style='width: fit-content; width: 100%;' onclick='checkInputs();'>");
         out.println("          </td>");
         out.println("        </tr>");
         out.println("      </table>");
@@ -127,19 +133,22 @@ public class Assignment4 extends HttpServlet // Inheriting from HttpServlet make
         out.println("  </hr>");
         out.println("  <br></br>");
 
-        // COLLABORATION SUMMARY  
+        // COLLABORATION SUMMARY
         out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto;'>");
         out.println("    <div style='padding: 10px'>");
         out.println("      <h3>Collaboration Summary:</h3>");
-        out.println("        <p>Khai Nguyen: Converted assignment 3 frontend to java servlet and relinked necessary files i.e. css and js.</p>");
-        out.println("        <p>Jesse Tran: Contributed towards reorganized doGet method and implementing getpost. redid form data.</p>");
-        out.println("        <p>Charlie Duong: Contributed towards implementation of getPost, output formatting, and integrated javascript file into doGet.</p>");
+        out.println(
+                "        <p>Khai Nguyen: Converted assignment 3 frontend to java servlet and relinked necessary files i.e. css and js.</p>");
+        out.println(
+                "        <p>Jesse Tran: Contributed towards reorganized doGet method and implementing getpost. redid form data.</p>");
+        out.println(
+                "        <p>Charlie Duong: Contributed towards implementation of getPost, output formatting, and integrated javascript file into doGet.</p>");
         out.println("    </div>");
         out.println("  </div>");
         out.println("</div>");
 
         out.println("</body>");
-    }   
+    }
 
     private void printTail(PrintWriter out) {
         out.println("");
