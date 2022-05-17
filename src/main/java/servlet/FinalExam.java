@@ -7,13 +7,13 @@ import java.io.*;
 import javax.servlet.annotation.WebServlet;
 
 // The @WebServletannotation is used to declare a servlet
-@WebServlet(name = "Assignment6Servlet", urlPatterns = { "/FinalExam" })
+@WebServlet(name = "FinalExamServlet", urlPatterns = { "/FinalExam" })
 
 public class FinalExam {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
