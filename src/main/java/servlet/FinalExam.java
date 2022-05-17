@@ -17,45 +17,11 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         printHeader(out);
-        String[] characteristic = request.getParameterValues("characteristicName");
-        String[] values = request.getParameterValues("blocks");
-
-        out.println("<body>");
-
-        out.println("<div>");
-        out.println("  <div style='text-align: center;'>");
-        out.println("    <h1 style='margin-bottom: 0px; padding-top: 5%;'>SWE 432-001 ASSIGNMENT #6</h1>");
-        out.println("    <h2>Charlie Duong &nbsp; | &nbsp; Khai Nguyen &nbsp; | &nbsp; Jesse Tran</h2><br>");
-        out.println("    <h3>Characteristics and their blocks</h3>");
-        out.println("  </div>");
 
         out.println(
-                "  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto; padding: 1em;'>");
-
-        // out.println("<p> " + values.length + " " + characteristic.length +"</p>");
-        printCharacteristics(request, out);
-        printEC(request, out);
-        // for(String s : values) {
-        // String line = "";
-        // line += "<p>[ ";
-
-        // int value = Integer.parseInt(s);
-        // for(int i = 1; i <= value; i++) {
-        // line += characteristic[i-1] + "-" + i;
-        // if (i < value) {
-        // line += ",";
-        // }
-        // line += " ";
-        // }
-
-        // line += "]</p>";
-        // out.println(line);
-        // }
-
-        out.println("  </div>");
-        out.println("</div>");
-
-        out.println("</body>");
+                "<body>" +
+                        "<h1> Final Exam </h1>" +
+                        "</body>");
 
         printTail(out);
         out.close();
