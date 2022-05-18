@@ -78,7 +78,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         int YY = Integer.parseInt(String.valueOf(YYYY).substring(0, 2));
         int DD = Integer.parseInt(dateArray[2]);
         int MM = Integer.parseInt(dateArray[1]);
-        String month;
+        String month = null;
 
         int temp = MM - 1;
         for (int i = 0; i < 12; i++) {
