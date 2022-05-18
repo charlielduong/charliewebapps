@@ -5,6 +5,7 @@ import javax.servlet.*; // servlet library
 import javax.servlet.http.*; // servlet library
 import java.io.*;
 import javax.servlet.annotation.WebServlet;
+import java.time.temporal.ChronoUnit;
 
 // The @WebServletannotation is used to declare a servlet
 @WebServlet(name = "FinalExamServlet", urlPatterns = { "/FinalExam" })
@@ -62,9 +63,6 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             case "DD-Month":
                 selection = 4;
                 break;
-            case "M/DD/YY":
-                selection = 5;
-                break;
             default:
                 selection = 0;
         }
@@ -99,10 +97,12 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             out.println("<p>The date is: " + DD + " " + month + ", " + YYYY + "</p>");
         } else if (selection == 4) {
             out.println("<p>The date is: " + DD + "-" + month + "</p>");
-        } else if (selection == 5) {
-            out.println("<p>The date is: " + MM + "/" + DD + "/" + YYYY + "</p>");
         }
 
+        // Print day of the year
+        LocalDate inputDate = LocalDate.of(YYYY, MM, DD);
+        int daysBetween = ChronoUnit.DAYS.between(LocalDate.of(YYYY, 1, 1), inputDate);
+        out.println("<p>Day of the year: " + daysBetween + "</p>");
         out.println("</div>");
 
         out.close();
@@ -133,10 +133,9 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
                 "<label> Choose date format: </label>" +
                 "<select name='dateFormat' id='dateFormat' required>" +
                 "<option value='MM-DD-YYYY'>MM/DD/YYYY</option>" +
-                "<option value='Month-DD-YYYY'>Month DD YYYY</option>" +
-                "<option value='DD-Month-YYYY'>DD Month YYYY</option>" +
+                "<option value='Month-DD-YYYY'>Month DD, YYYY</option>" +
+                "<option value='DD-Month-YYYY'>DD Month, YYYY</option>" +
                 "<option value='DD-Month'>DD-Month</option>" +
-                "<option value='M/DD/YY'>M/DD/YY</option>" +
                 "</select>" +
                 "</div>";
 
