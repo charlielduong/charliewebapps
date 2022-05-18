@@ -74,10 +74,10 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         }
 
         String[] dateArray = dateInput[0].split("-");
-        int YYYY = dateArray[0];
+        int YYYY = Integer.parseInt(dateArray[0]);
         int YY = Integer.parseInt(String.valueOf(YYYY).substring(0, 2));
-        int DD = dateArray[2];
-        int MM = dateArray[1];
+        int DD = Integer.parseInt(dateArray[2]);
+        int MM = Integer.parseInt(dateArray[1]);
         String month;
 
         int temp = MM - 1;
