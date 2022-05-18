@@ -7,6 +7,7 @@ import java.io.*;
 import javax.servlet.annotation.WebServlet;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.WeekFields;
 
 // The @WebServletannotation is used to declare a servlet
 @WebServlet(name = "FinalExamServlet", urlPatterns = { "/FinalExam" })
@@ -100,11 +101,18 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             out.println("<p>The date is: " + DD + "-" + month + "</p>");
         }
 
-        // Print day of the year
         LocalDate inputDate = LocalDate.of(YYYY, MM, DD);
-        int daysBetween = (int) ChronoUnit.DAYS.between(LocalDate.of(YYYY, 1, 1), inputDate);
+
+        // Print day of the year
+        int daysBetween = (int) ChronoUnit.DAYS.between(LocalDate.of(YYYY, 1, 1), inputDate) + 1;
         out.println("<p>Day of the year: " + daysBetween + "</p>");
         out.println("</div>");
+
+        // Print day of the week
+        out.println("<p>Day of the week: " + inputDate.getDayOfWeek().toString() + "</p>");
+
+        // Print Week of the year
+        out.println("<p>Week of the year: " + inputDate.get(WeekFields.of(locale).weekOfYear()));
 
         out.close();
     } // end printResults()
