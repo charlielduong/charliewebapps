@@ -91,15 +91,15 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         // Parsing done, now printing the results
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
 
-        if (selection = 1) {
+        if (selection == 1) {
             out.println("<p>The date is: " + MM + "/" + DD + "/" + YYYY + "</p>");
-        } else if (selection = 2) {
+        } else if (selection == 2) {
             out.println("<p>The date is: " + month + " " + DD + ", " + YYYY + "</p>");
-        } else if (selection = 3) {
+        } else if (selection == 3) {
             out.println("<p>The date is: " + DD + " " + month + ", " + YYYY + "</p>");
-        } else if (selection = 4) {
+        } else if (selection == 4) {
             out.println("<p>The date is: " + DD + "-" + month + "</p>");
-        } else if (selection = 5) {
+        } else if (selection == 5) {
             out.println("<p>The date is: " + MM + "/" + DD + "/" + YYYY + "</p>");
         }
 
