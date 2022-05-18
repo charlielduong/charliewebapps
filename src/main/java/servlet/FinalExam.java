@@ -112,7 +112,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         out.println("<p>Day of the week: " + inputDate.getDayOfWeek().toString() + "</p>");
 
         // Print Week of the year
-        out.println("<p>Week of the year: " + inputDate.get(WeekFields.of.weekOfYear()));
+        out.println("<p>Week of the year: " + inputDate.get(WeekFields.of(Locale.US).weekOfYear()));
 
         out.close();
     } // end printResults()
