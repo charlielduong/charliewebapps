@@ -13,7 +13,6 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String[] test = request.getParameterValues("data");
         response.setContentType("text/html");
 
         PrintWriter out = response.getWriter();
@@ -23,7 +22,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
                 "<h2>Charlie Duong G01191814</h2>" +
                 "<br>" +
                 "<h3>Output</h3>");
-        printResults();
+        printResults(request, response);
         printTail(out);
         out.close();
 
@@ -43,10 +42,21 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             throws ServletException, IOException {
         response.setContentType("text/html"); // Tells the web container what we're sending back
         PrintWriter out = response.getWriter(); // Make it appear as if we're "writing" to the browser window
+        String[] test = request.getParameterValues("data");
 
-        out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>" +
-                "<h1>test</h1>" +
-                "</div>");
+        out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
+        int curr = 0;
+        for (String s : test) {
+            String line = "";
+            line += "<p>[ ";
+            line += s;
+            line += "]</p>";
+
+            out.println(line);
+            curr++;
+        }
+        out.println("</div>");
+
         out.close();
     } // end printResults()
 
@@ -89,7 +99,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
                 "</select>" +
                 "</div>";
 
-        out.println("<div style='background-color: grey; border-radius: 5px; width: 50%; margin: auto;'>");
+        out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
         out.println("<form action='/FinalExam' name='data' style='text-align: center; margin-top: 5%' method='POST'>");
         out.println(dateDiv);
         out.println(selectDiv);
