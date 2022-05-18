@@ -107,16 +107,16 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         // Print day of the year
         int daysBetween = (int) ChronoUnit.DAYS.between(LocalDate.of(YYYY, 1, 1), inputDate) + 1;
         out.println("<p>Day of the year: " + daysBetween + "</p>");
-        out.println("</div>");
 
         // Print day of the week
         out.println("<p>Day of the week: " + inputDate.getDayOfWeek().toString() + "</p>");
 
         // Print Week of the year
-        WeekFields weekFields = WeekFields.of(DayOfWeek.MONDAY, 1);
+        WeekFields weekFields = WeekFields.of(DayOfWeek.MONDAY, 0);
         TemporalField weekOfYear = weekFields.weekOfYear();
         out.println("<p>Week of the year: " + inputDate.get(weekOfYear) + "</p>");
 
+        out.println("</div>");
         out.close();
     } // end printResults()
 
