@@ -43,7 +43,8 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         out.println("<head>");
         out.println("<title>SWE 432-001 Final Exam </title>");
         out.println("<link rel='stylesheet' type='text/css' href='/styles/FinalExam.css'/>");
-        out.println("<link rel='stylesheet' type='text/css' href='/styles/default.css'/>");
+        // out.println("<link rel='stylesheet' type='text/css'
+        // href='/styles/default.css'/>");
 
         out.println("<script src='js/FinalExam.js'></script>");
 
