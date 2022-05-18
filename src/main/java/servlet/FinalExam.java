@@ -102,7 +102,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 
         // Print day of the year
         LocalDate inputDate = LocalDate.of(YYYY, MM, DD);
-        int daysBetween = ChronoUnit.DAYS.between(LocalDate.of(YYYY, 1, 1), inputDate);
+        int daysBetween = (int) ChronoUnit.DAYS.between(LocalDate.of(YYYY, 1, 1), inputDate);
         out.println("<p>Day of the year: " + daysBetween + "</p>");
         out.println("</div>");
 
