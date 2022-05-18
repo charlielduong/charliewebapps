@@ -42,16 +42,16 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             throws ServletException, IOException {
         response.setContentType("text/html"); // Tells the web container what we're sending back
         PrintWriter out = response.getWriter(); // Make it appear as if we're "writing" to the browser window
-        String[] dateInput = request.getParameterValues("dateFormat");
-        String[] formatInput = request.getParameterValues("data");
+        String[] formatInput = request.getParameterValues("dateFormat");
+        String[] dateInput = request.getParameterValues("data");
 
         // First parse the received data
         int month, day, year;
         int selection = 0;
 
-        dateInput[0] = dateInput[0].substring(1, dateInput[0].length() - 1);
+        String newDate = dateInput[0].substring(1, dateInput[0].length() - 1);
 
-        String[] dateArray = dateInput[0].split("-");
+        String[] dateArray = newDate.split("-");
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
 
         for (String s : dateArray) {
