@@ -7,6 +7,7 @@ import java.io.*;
 import javax.servlet.annotation.WebServlet;
 import java.time.*;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalField;
 import java.time.temporal.WeekFields;
 
 // The @WebServletannotation is used to declare a servlet
@@ -112,7 +113,9 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         out.println("<p>Day of the week: " + inputDate.getDayOfWeek().toString() + "</p>");
 
         // Print Week of the year
-        out.println("<p>Week of the year: " + inputDate.get(WeekFields.of(Locale.US).weekOfYear()));
+        WeekFields weekFields = WeekFields.of(DayOfWeek.MONDAY, 1);
+        TemporalField weekOfYear = weekFields.weekOfYear();
+        out.println("<p>Week of the year: " + inputDate.get(weekOfYear) + "</p>");
 
         out.close();
     } // end printResults()
