@@ -42,22 +42,20 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             throws ServletException, IOException {
         response.setContentType("text/html"); // Tells the web container what we're sending back
         PrintWriter out = response.getWriter(); // Make it appear as if we're "writing" to the browser window
-        String test = request.getParameterValues("dateFormat");
+        String[] test = request.getParameterValues("dateFormat");
         String[] test2 = request.getParameterValues("data");
 
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
         int curr = 0;
-        // for (String s : test) {
-        // String line = "";
-        // line += "<p>[ ";
-        // line += s;
-        // line += "]</p>";
+        for (String s : test) {
+            String line = "";
+            line += "<p>[ ";
+            line += s;
+            line += "]</p>";
 
-        // out.println(line);
-        // curr++;
-        // }
-
-        out.println(test);
+            out.println(line);
+            curr++;
+        }
         out.println("</div>");
 
         out.close();
