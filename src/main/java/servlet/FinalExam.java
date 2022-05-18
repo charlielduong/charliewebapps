@@ -42,16 +42,23 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             throws ServletException, IOException {
         response.setContentType("text/html"); // Tells the web container what we're sending back
         PrintWriter out = response.getWriter(); // Make it appear as if we're "writing" to the browser window
-        String[] test = request.getParameterValues("dateFormat");
-        String[] test2 = request.getParameterValues("data");
+        String[] dateInput = request.getParameterValues("dateFormat");
+        String[] formatInput = request.getParameterValues("data");
 
+        // First parse the received data
+        int month = day = year = 0;
+        int selection = 0;
+
+        dateInput[0].deleteCharAt(0);
+        dateInput[0].deleteCharAt(dateInput[0].length() - 1);
+
+        String[] dateArray = dateInput[0].split("-");
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
 
-        for (String s : test2) {
+        for (String s : dateArray) {
             out.println("<p>[ " + s + "]</p>");
         }
-
-        for (String s : test) {
+        for (String s : formatInput) {
             out.println("<p>[ " + s + "]</p>");
         }
 
@@ -64,13 +71,6 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         out.println("<html>");
         out.println("<head>");
         out.println("<title>SWE 432-001 Final Exam </title>");
-        // out.println("<link rel='stylesheet' type='text/css'
-        // href='/styles/FinalExam.css'/>");
-        // out.println("<link rel='stylesheet' type='text/css'
-        // href='/styles/default.css'/>");
-
-        out.println("<script src='js/FinalExam.js'></script>");
-
         out.println("</head>");
     }
 
