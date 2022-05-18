@@ -49,8 +49,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         int month, day, year;
         int selection = 0;
 
-        dateInput[0].deleteCharAt(0);
-        dateInput[0].deleteCharAt(dateInput[0].length() - 1);
+        dateInput[0] = dateInput[0].substring(1, dateInput[0].length() - 1);
 
         String[] dateArray = dateInput[0].split("-");
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
