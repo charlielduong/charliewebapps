@@ -46,16 +46,15 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         String[] test2 = request.getParameterValues("data");
 
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
-        int curr = 0;
-        for (String s : test) {
-            String line = "";
-            line += "<p>[ ";
-            line += s;
-            line += "]</p>";
 
-            out.println(line);
-            curr++;
+        for (String s : test2) {
+            out.println("<p>[ " + s + "]</p>");
         }
+
+        for (String s : test) {
+            out.println("<p>[ " + s + "]</p>");
+        }
+
         out.println("</div>");
 
         out.close();
