@@ -82,7 +82,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 
         int temp = MM - 1;
         for (int i = 0; i < 12; i++) {
-            if (temp == 0) {
+            if (temp-- == 0) {
                 month = months[i];
                 break;
             }
