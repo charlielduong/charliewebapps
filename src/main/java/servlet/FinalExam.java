@@ -23,7 +23,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
                 "<h2>Charlie Duong G01191814</h2>" +
                 "<br>" +
                 "<h3>Output</h3>");
-
+        printResults();
         printTail(out);
         out.close();
 
@@ -38,6 +38,17 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         printTail(out);
         out.close();
     } // end doGet()
+
+    public void printResults(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html"); // Tells the web container what we're sending back
+        PrintWriter out = response.getWriter(); // Make it appear as if we're "writing" to the browser window
+
+        out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>" +
+                "<h1>test</h1>" +
+                "</div>");
+        out.close();
+    } // end printResults()
 
     private void printHeader(PrintWriter out) {
         out.println("<html>");
