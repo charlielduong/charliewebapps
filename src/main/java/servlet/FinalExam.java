@@ -137,7 +137,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 
         out.println(title);
 
-        String dateDiv = "<div style='position:relative; right:158px; top:10px'>" +
+        String dateDiv = "<div style='position:relative; right:180px; top:10px'>" +
                 "<label> Enter a Date: </label>" +
                 "<input type='date' name='data'/>" +
                 "</div>";
