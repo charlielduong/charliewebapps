@@ -131,15 +131,7 @@ public class assignment6 extends HttpServlet // Inheriting from HttpServlet make
         out.println("  </hr>");
         out.println("  <br></br>");
 
-        // COLLABORATION SUMMARY  
-        out.println("  <div style='background-color: white; border-radius: 5px; width: 50%; margin: auto;'>");
-        out.println("    <div style='padding: 10px'>");
-        out.println("      <h3>Collaboration Summary:</h3>");
-        out.println("        <p>Khai Nguyen: Converted assignment 3 frontend to java servlet and relinked necessary files i.e. css and js.</p>");
-        out.println("        <p>Jesse Tran: Contributed towards reorganized doGet method and implementing getpost. redid form data.</p>");
-        out.println("        <p>Charlie Duong: Contributed towards implementation of getPost, output formatting, and integrated javascript file into doGet.</p>");
-        out.println("    </div>");
-        out.println("  </div>");
+
         out.println("</div>");
 
         out.println("</body>");

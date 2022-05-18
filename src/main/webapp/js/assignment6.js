@@ -115,5 +115,4 @@ function checkInputs() {
     }
 
     return true;
-
 }

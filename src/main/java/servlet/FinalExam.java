@@ -52,7 +52,30 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 
     private void printBody(PrintWriter out) {
         out.println("<body>");
-        out.println("<h1> Final Exam </h1>");
+
+        String dateDiv = "<div style='position:relative; right:158px; top:10px'>" +
+                "<label> Date: </label>" +
+                "<input type='date'/>" +
+                "</div>";
+        String selectDiv = "<div style='position:relative; right:200px; top:10px'>" +
+                "<label> Choose date format: </label>" +
+                "<select name='dateFormat' id='dateFormat' required>" +
+                "<option value='MM-DD-YYYY'>MM/DD/YYYY</option>" +
+                "<option value='Month-DD-YYYY'>Month DD YYYY</option>" +
+                "<option value='DD-Month-YYYY'>DD Month YYYY</option>" +
+                "<option value='DD-Month'>DD-Month</option>" +
+                "<option value='M/DD/YY'>M/DD/YY</option>" +
+                "</select>" +
+                "</div>";
+
+        out.println("<div style='background-color: grey; border-radius: 5px; width: 50%; margin: auto;'>");
+        out.println("   <form action='/FinalExam' style='text-align: center; margin-top: 5%' method='POST'>");
+        out.println(dateDiv);
+        out.println(selectDiv);
+        out.println(
+                "<input style='position:relative; left:50px; top: -20px;' type='submit '; onclick='processForm();'/>");
+        out.println("   </form>");
+        out.println("</div>");
         out.println("</body>");
     }
 
