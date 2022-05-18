@@ -42,19 +42,22 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             throws ServletException, IOException {
         response.setContentType("text/html"); // Tells the web container what we're sending back
         PrintWriter out = response.getWriter(); // Make it appear as if we're "writing" to the browser window
-        String[] test = request.getParameterValues("data");
+        String test = request.getParameterValues("dateFormat");
+        String[] test2 = request.getParameterValues("data");
 
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
         int curr = 0;
-        for (String s : test) {
-            String line = "";
-            line += "<p>[ ";
-            line += s;
-            line += "]</p>";
+        // for (String s : test) {
+        // String line = "";
+        // line += "<p>[ ";
+        // line += s;
+        // line += "]</p>";
 
-            out.println(line);
-            curr++;
-        }
+        // out.println(line);
+        // curr++;
+        // }
+
+        out.println(test);
         out.println("</div>");
 
         out.close();
@@ -86,7 +89,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 
         String dateDiv = "<div style='position:relative; right:158px; top:10px'>" +
                 "<label> Date: </label>" +
-                "<input type='date'/>" +
+                "<input type='date' name='data'/>" +
                 "</div>";
         String selectDiv = "<div style='position:relative; right:200px; top:10px'>" +
                 "<label> Choose date format: </label>" +
@@ -100,7 +103,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
                 "</div>";
 
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
-        out.println("<form action='/FinalExam' name='data' style='text-align: center; margin-top: 5%' method='POST'>");
+        out.println("<form action='/FinalExam' style='text-align: center; margin-top: 5%' method='POST'>");
         out.println(dateDiv);
         out.println(selectDiv);
         out.println("<input style='position:relative; left:50px; top: -20px;' type='submit'/>");
