@@ -46,7 +46,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         String[] formatInput = request.getParameterValues("data");
 
         // First parse the received data
-        int month = day = year = 0;
+        int month, day, year;
         int selection = 0;
 
         dateInput[0].deleteCharAt(0);
