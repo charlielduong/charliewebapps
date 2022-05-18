@@ -13,15 +13,16 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
 {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String[] test = request.getParameterValues("data");
         response.setContentType("text/html");
+
         PrintWriter out = response.getWriter();
         printHeader(out);
-
-        out.println(
-                "<body>" +
-                        "<h1> Final Exam </h1>" +
-                        "</body>");
+        out.println("<div style='text-align: center;'>" +
+                "<h1>SWE 432-001 Final Exam</h1>" +
+                "<h2>Charlie Duong G01191814</h2>" +
+                "<br>" +
+                "<h3>Output</h3>");
 
         printTail(out);
         out.close();
@@ -78,7 +79,7 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
                 "</div>";
 
         out.println("<div style='background-color: grey; border-radius: 5px; width: 50%; margin: auto;'>");
-        out.println("<form action='/FinalExam' style='text-align: center; margin-top: 5%' method='POST'>");
+        out.println("<form action='/FinalExam' name='data' style='text-align: center; margin-top: 5%' method='POST'>");
         out.println(dateDiv);
         out.println(selectDiv);
         out.println("<input style='position:relative; left:50px; top: -20px;' type='submit'/>");
