@@ -46,9 +46,9 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
         String[] dateInput = request.getParameterValues("data");
 
         // First parse the received data
-        int month, day, year;
         int selection = 0;
-
+        String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
+                "October", "November", "December" };
         switch (formatInput[0]) {
             case "MM-DD-YYYY":
                 selection = 1;
@@ -65,15 +65,43 @@ public class FinalExam extends HttpServlet // Inheriting from HttpServlet makes 
             case "M/DD/YY":
                 selection = 5;
                 break;
+            default:
+                selection = 0;
+        }
+
+        if (selection == 0) {
+            return;
         }
 
         String[] dateArray = dateInput[0].split("-");
+        int YYYY = dateArray[0];
+        int YY = Integer.parseInt(String.valueOf(YYYY).substring(0, 2));
+        int DD = dateArray[2];
+        int MM = dateArray[1];
+        String month;
+
+        int temp = MM - 1;
+        for (int i = 0; i < 12; i++) {
+            if (temp == 0) {
+                month = months[i];
+                break;
+            }
+        }
+
+        // Parsing done, now printing the results
         out.println("<div style='background-color: lightgrey; border-radius: 5px; width: 50%; margin: auto;'>");
 
-        for (String s : dateArray) {
-            out.println("<p>[ " + s + "]</p>");
+        if (selection = 1) {
+            out.println("<p>The date is: " + MM + "/" + DD + "/" + YYYY + "</p>");
+        } else if (selection = 2) {
+            out.println("<p>The date is: " + month + " " + DD + ", " + YYYY + "</p>");
+        } else if (selection = 3) {
+            out.println("<p>The date is: " + DD + " " + month + ", " + YYYY + "</p>");
+        } else if (selection = 4) {
+            out.println("<p>The date is: " + DD + "-" + month + "</p>");
+        } else if (selection = 5) {
+            out.println("<p>The date is: " + MM + "/" + DD + "/" + YYYY + "</p>");
         }
-        out.println("<p> Selection is: " + selection + ": " + formatInput[0] + "</p>");
 
         out.println("</div>");
 
